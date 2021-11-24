@@ -81,7 +81,7 @@
 { "type": "Feature", "properties": { "stop_name": "Vallbona d'Anoia", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 1.709010719, 41.52025979 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Valldoreix", "sum": 59 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.06831203, 41.45784156 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Vallparadís Universitat", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.0190489, 41.5633063 ] ] } },
-{ "type": "Feature", "properties": { "stop_name": "Vallvidrera Inferior", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.112954, 41.4095214 ] ] } },
+
 { "type": "Feature", "properties": { "stop_name": "Vallvidrera Superior", "sum": 12 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.105778047, 41.41412843 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Vilanova del Camí", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 1.642009216, 41.57331472 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Volpelleres", "sum": 49 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.072928, 41.481248 ] ] } }
