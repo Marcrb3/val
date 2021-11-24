@@ -4,7 +4,7 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "stop_name": "Aeroport", "sum": 10 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.07218, 41.303844 ] ] } },
-{ "type": "Feature", "properties": { "stop_name": "Arc De Triomf", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.180271, 41.391646 ] ] } },
+{ "type": "Feature", "properties": { "stop_name": "Arc De Triomf", "sum": 150 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.180271, 41.391646 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Arenys De Mar", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.549343, 41.5777 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Badalona", "sum": 43 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.248893, 41.445921 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Balenyá Els-Hostalets", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.233315, 41.814938 ] ] } },
