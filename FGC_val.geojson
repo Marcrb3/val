@@ -53,7 +53,7 @@
 { "type": "Feature", "properties": { "fid": 48, "stop_name": "Piera", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 1.75450443, 41.52591339 ] ] } },
 { "type": "Feature", "properties": { "fid": 49, "stop_name": "Pl. Catalunya", "sum": 794 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.168720219, 41.38563194 ] ] } },
 { "type": "Feature", "properties": { "fid": 50, "stop_name": "Pl. Espanya", "sum": 596 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.148458333, 41.3747199 ] ] } },
-{ "type": "Feature", "properties": { "fid": 51, "stop_name": "Pl. Molina", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.146754722, 41.4016938 ] ] } },
+
 { "type": "Feature", "properties": { "fid": 52, "stop_name": "Provença", "sum": 591 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.158030869, 41.39281434 ] ] } },
 { "type": "Feature", "properties": { "fid": 53, "stop_name": "Pàdua", "sum": 21 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.142759094, 41.40351065 ] ] } },
 { "type": "Feature", "properties": { "fid": 54, "stop_name": "Quatre Camins", "sum": 11 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.001715183, 41.40629238 ] ] } },
