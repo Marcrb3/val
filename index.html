@@ -302,11 +302,27 @@
             border-radius: 50%;
 
         }
+         #fosc {
+            background-color: rgb(82, 82, 82);
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+            width:10%;
+            position:absolute;
+            z-index: 10000;
+            right: 0;
+            margin-top: 1em;
+            margin-right: 1em;
+        }
+        #fosc:hover,
+        #fosc:after {
+            background-color: rgb(44, 44, 44);
+            color: rgb(255, 255, 255);
+        }
     </style>
 </head>
 
 <body>
-
+    <a class="btn" id="fosc" href="https://marcrb3.github.io/val/index2.html" role="button">Validacions FGC</a>
     <div id="mapid"> </div>
 
     <script>
@@ -367,7 +383,7 @@
             L.control.scale().addTo(mymap);
             grup = L.layerGroup(kxIncidents, kyIncidents);
             L.control.locate({ position: 'topleft', flyTo: "true", initialZoomLevel: "13" }).addTo(mymap);
-            var control = L.Control.geocoder({ placeholder: "Cerca..." }).addTo(mymap);
+            
 
 
 
@@ -397,7 +413,7 @@
 
             }).addTo(mymap);
 
-
+        kyIncidents.bringToFront();
 
 
         });
