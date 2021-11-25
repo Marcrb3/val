@@ -570,6 +570,14 @@
             //   }
         }
 
+        function zoomToFeature(e){
+            mymap.flyToBounds(e.target.getBounds());
+        }
+
+        function zoomToFeature2(e){
+            
+            mymap.setView(e.latlng, 15);
+        }
 
 
         //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
@@ -581,7 +589,7 @@
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
-                click: highlightFeature2,
+                click: zoomToFeature2
             });
 
         }
@@ -591,7 +599,8 @@
 
                 layer.on({
                 mouseover: highlightFeatureL,
-                mouseout: resetHighlightL                
+                mouseout: resetHighlightL,
+                click: zoomToFeature                
             });    
         }
 

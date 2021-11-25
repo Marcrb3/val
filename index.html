@@ -307,7 +307,7 @@
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width:12em;
+            width: 12em;
             position: absolute;
             z-index: 10000;
             right: 0;
@@ -325,7 +325,7 @@
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width:12em;
+            width: 12em;
             position: absolute;
             z-index: 10000;
             right: 0;
@@ -519,7 +519,7 @@
 
             layer.setStyle({
                 weight: 5,
-                
+
             });
 
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -530,9 +530,7 @@
         //restablim el contorn al fer mouseout
 
 
-        //  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        //        layer.bringToFront();
-        //    }
+
         function resetHighlight(e) {
             var layer = e.target;
 
@@ -549,7 +547,7 @@
 
             layer.setStyle({
                 weight: 2.5,
-                
+
             });
             layer.bringtoBack();
         }
@@ -564,12 +562,21 @@
                 fillOpacity: 0.55
             });
 
-            //  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-            //        layer.bringToFront();
-            //   }
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
         }
 
+        function zoomToFeature(e){
+            mymap.flyToBounds(e.target.getBounds());
+        }
+
+        function zoomToFeature2(e){
+            
+            mymap.setView(e.latlng, 15);
+        }
         
+
 
         //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
 
@@ -580,18 +587,19 @@
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
-                click: highlightFeature2
-            });
+                click: zoomToFeature2
+              });
 
         }
 
         function onEachFeature2(feature, layer) {
-            layer.bindTooltip("<h5 class='infoHeader'><strong>Línia: " + feature.properties.routes_rou + "<br><br>" + feature.properties.routes_r_1 + "</h5>",{sticky:true});
+            layer.bindTooltip("<h5 class='infoHeader'><strong>Línia: " + feature.properties.routes_rou + "<br><br>" + feature.properties.routes_r_1 + "</h5>", { sticky: true });
 
-                layer.on({
+            layer.on({
                 mouseover: highlightFeatureL,
-                mouseout: resetHighlightL                
-            });    
+                mouseout: resetHighlightL,
+                click: zoomToFeature
+            });
         }
 
     </script>
