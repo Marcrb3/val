@@ -308,10 +308,11 @@
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 10%;
+            width:12em;
             position: absolute;
             z-index: 10000;
             right: 0;
+            
             margin-top: 1em;
             margin-right: 1em;
         }
@@ -321,11 +322,11 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
-         #fosc2 {
+        #fosc2 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 10%;
+            width:12em;
             position: absolute;
             z-index: 10000;
             right: 0;
@@ -339,11 +340,13 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
+        
     </style>
 </head>
 
 <body>
-
+    
     <a class="btn" id="fosc" href="https://marcrb3.github.io/val/index.html" role="button">Validacions TMB</a>
     <a class="btn" id="fosc2" href="https://marcrb3.github.io/val/index2.html" role="button">Validacions FGC</a>
 
@@ -434,7 +437,7 @@
 
             kyAMB = L.geoJSON(linies.responseJSON, {
                 style: style_line,
-
+                onEachFeature: onEachFeature2
             }).addTo(mymap);
 
             kyIncidents.bringToFront();
@@ -485,7 +488,7 @@
 
         function style_line(feature) {
             return {
-                weight: 2,
+                weight: 2.5,
                 opacity: 1,
                 color: getColor(feature.properties.CODIEIX),
                 dashArray: '',
@@ -493,7 +496,6 @@
 
             };
         }
-
 
 
 
@@ -506,6 +508,19 @@
                 color: 'black',
                 dashArray: '',
                 fillOpacity: 0.55
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+        }
+
+        function highlightFeatureL(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 5,
+                
             });
 
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -528,6 +543,16 @@
                 dashArray: '',
                 fillOpacity: 0.55
             });
+        }
+
+        function resetHighlightL(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 2.5,
+                
+            });
+            layer.bringtoBack();
         }
 
         function highlightFeature2(e) {
@@ -559,14 +584,16 @@
                 click: highlightFeature2,
             });
 
-
-
-
-
-
         }
 
+        function onEachFeature2(feature, layer) {
+            layer.bindTooltip("<h5 class='infoHeader'><strong>Línia: " + feature.properties.CODIEIX + "<br><br></h5>");
 
+                layer.on({
+                mouseover: highlightFeatureL,
+                mouseout: resetHighlightL                
+            });    
+        }
 
     </script>
 

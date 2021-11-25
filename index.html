@@ -302,31 +302,34 @@
             border-radius: 50%;
 
         }
-         #fosc {
+
+        #fosc {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width:10%;
-            position:absolute;
+            width:12em;
+            position: absolute;
             z-index: 10000;
             right: 0;
             margin-top: 1em;
             margin-right: 1em;
         }
+
         #fosc:hover,
         #fosc:after {
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
-         #fosc2 {
+
+        #fosc2 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 10%;
+            width:12em;
             position: absolute;
             z-index: 10000;
             right: 0;
-            
+
             margin-top: 4em;
             margin-right: 1em;
         }
@@ -402,7 +405,7 @@
             L.control.scale().addTo(mymap);
             grup = L.layerGroup(kxIncidents, kyIncidents);
             L.control.locate({ position: 'topleft', flyTo: "true", initialZoomLevel: "13" }).addTo(mymap);
-            
+
 
 
 
@@ -423,16 +426,16 @@
                         weight: 1,
                         opacity: 1,
                         fillOpacity: 0.5
-                    }); 
-               }
+                    });
+                }
             }).addTo(mymap);
 
             kyAMB = L.geoJSON(linies.responseJSON, {
                 style: style_line,
-
+                onEachFeature: onEachFeature2
             }).addTo(mymap);
 
-        kyIncidents.bringToFront();
+            kyIncidents.bringToFront();
 
 
         });
@@ -483,7 +486,7 @@
 
         function style_line(feature) {
             return {
-                weight: 2,
+                weight: 2.5,
                 opacity: 1,
                 color: getColor(feature.properties.routes_rou),
                 dashArray: '',
@@ -492,7 +495,7 @@
             };
         }
 
-     
+
 
 
         //ressaltem el contorn dels poligons al fer hover
@@ -506,9 +509,22 @@
                 fillOpacity: 0.55
             });
 
-               if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                    layer.bringToFront();
-               }
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+        }
+
+        function highlightFeatureL(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 5,
+                
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
         }
 
         //restablim el contorn al fer mouseout
@@ -526,6 +542,16 @@
                 dashArray: '',
                 fillOpacity: 0.55
             });
+        }
+
+        function resetHighlightL(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 2.5,
+                
+            });
+            layer.bringtoBack();
         }
 
         function highlightFeature2(e) {
@@ -554,17 +580,19 @@
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
-                click: highlightFeature2,
+                click: highlightFeature2
             });
-
-
-
-
-
 
         }
 
+        function onEachFeature2(feature, layer) {
+            layer.bindTooltip("<h5 class='infoHeader'><strong>Línia: " + feature.properties.routes_rou + "<br><br>" + feature.properties.routes_r_1 + "</h5>");
 
+                layer.on({
+                mouseover: highlightFeatureL,
+                mouseout: resetHighlightL                
+            });    
+        }
 
     </script>
 
