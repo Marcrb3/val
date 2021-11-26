@@ -294,15 +294,12 @@
             opacity: 0.7;
         }
 
-
-
         .circle {
             float: left;
             border: none;
             border-radius: 50%;
 
         }
-
 
         #fosc {
             background-color: rgb(82, 82, 82);
@@ -341,6 +338,7 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
         #fosc3 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
@@ -380,14 +378,6 @@
                 alert(xhr.statusText)
             }
         })
-        //  var linies = $.ajax({
-        //       url: "https://raw.githubusercontent.com/Marcrb3/val/main/Linies_ROD.geojson",
-        //       dataType: "json",
-        //       success: console.log("Capa geojson 2 carregada correctament."),
-        //      error: function (xhr) {
-        //          alert(xhr.statusText)
-        //       }
-        //   })
 
         $.when(validacions).done(function () {
 
@@ -400,8 +390,6 @@
                     [42.88239, 5.06357]
                 ],
             }).setView([41.385243705090105, 2.1402139383833516], 12);
-
-
 
             var Dark = L.mapboxGL({
                 style: 'mapbox://styles/marcrb3/cjsu9je764ne51fn719pub5lu',
@@ -430,57 +418,54 @@
             L.control.locate({ position: 'topleft', flyTo: "true", initialZoomLevel: "13" }).addTo(mymap);
 
 
-
-
-
-
             //Carreguem la capa al iniciar el mapa
 
 
             kyIncidents = L.geoJSON(validacions.responseJSON, {
                 onEachFeature: onEachFeature,
                 style: style_line,
-                
-
-                
             }).addTo(mymap);
-
-            //   kyAMB = L.geoJSON(linies.responseJSON, {
-            //        style: style_line,
-            //        onEachFeature: onEachFeature2
-            //      }).addTo(mymap);
-
-            //      kyIncidents.bringToFront();
+            kyIncidents.bringToFront();
 
         });
 
         //Paletes de colors
 
-        function getColor(d) {
-            return d > 384 ? '#993404' :
-                d > 330 ? '#be4c09' :
-                    d > 275 ? '#df6711' :
-                        d > 220 ? '#f48821' :
-                            d > 165 ? '#feab46' :
-                                d > 111 ? '#fed080' :
-                                    d > 56 ? '#ffeaac' :
-                                        d > 1 ? '#ffffd4' :
-                                            '#ffffff';
-        }
 
         function getOpacity(d) {
             return d > 384 ? '1' :
                 d > 330 ? '0.9' :
                     d > 275 ? '0.8' :
                         d > 220 ? '0.7' :
-                            d > 165 ? '0.6' :
-                                d > 111 ? '0.5' :
-                                    d > 56 ? '0.4' :
-                                        d > 1 ? '0.3' :
+                            d > 165 ? '0.65' :
+                                d > 111 ? '0.6' :
+                                    d > 56 ? '0.55' :
+                                        d > 1 ? '0.5' :
                                             '0';
         }
 
+        function getWeight(d) {
+            return d > 384 ? '3.1' :
+                d > 330 ? '2.8' :
+                    d > 275 ? '2.5' :
+                        d > 220 ? '2.2' :
+                            d > 165 ? '1.9' :
+                                d > 111 ? '1.6' :
+                                    d > 56 ? '1.3' :
+                                        d > 1 ? '1' :
+                                            '0';
+        }
 
+        function getColor(d) {
+            return d == '009EE0' ? '#009EE0' :
+                d == 'DC241F' ? '#DC241F' :
+                    d == '6AB023' ? '#6AB023' :
+                        d == '010101' ? '#010101' :
+                            d == '93117E' ? '#93117E' :
+                                '#ffffff';
+
+
+        }
 
 
         //Estil
@@ -488,46 +473,16 @@
 
         function style_line(feature) {
             return {
-                weight: 2.5,
-                opacity: 1,
-                color: getColor(feature.properties.val),
+                weight: getWeight(feature.properties.val),
+                opacity: getOpacity(feature.properties.val),
+                color: getColor(feature.properties.color),
                 dashArray: '',
-                fillOpacity: getOpacity(feature.properties.val),
+                fillOpacity: 1,
 
             };
         }
 
 
-
-        //ressaltem el contorn dels poligons al fer hover
-        function highlightFeature(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 4,
-               
-              
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                layer.bringToFront();
-            }
-        }
-
-       
-        //restablim el contorn al fer mouseout
-
-        function resetHighlight(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 2.5,
-
-             
-            });
-        }
-
-      
         function zoomToFeature(e) {
             mymap.flyToBounds(e.target.getBounds());
         }
@@ -536,11 +491,9 @@
 
         function onEachFeature(feature, layer) {
 
-            layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.LINIA_ESTACIO + "<br><br> Validacions: " + feature.properties.val + "</h5>",{ sticky: true });
+            layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.LINIA_ESTACIO + "<br><br> Validacions: " + feature.properties.val + "</h5>", { sticky: true });
 
             layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
                 click: zoomToFeature
             });
 
