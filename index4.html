@@ -2,7 +2,7 @@
 <html lang="es" xml:lang="es">
 
 <head>
-    <title>Validacions Renfe</title>
+    <title>Validacions TMB Bus</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -483,9 +483,6 @@
         }
 
 
-        function zoomToFeature(e) {
-            mymap.flyToBounds(e.target.getBounds());
-        }
 
         //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
 
@@ -493,9 +490,7 @@
 
             layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.LINIA_ESTACIO + "<br><br> Validacions: " + feature.properties.val + "</h5>", { sticky: true });
 
-            layer.on({
-                click: zoomToFeature
-            });
+           
 
         }
 
