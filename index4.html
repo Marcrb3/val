@@ -437,35 +437,35 @@
                 d > 330 ? '0.9' :
                     d > 275 ? '0.8' :
                         d > 220 ? '0.7' :
-                            d > 165 ? '0.65' :
-                                d > 111 ? '0.6' :
-                                    d > 56 ? '0.55' :
-                                        d > 1 ? '0.5' :
+                            d > 165 ? '0.6' :
+                                d > 111 ? '0.5' :
+                                    d > 56 ? '0.45' :
+                                        d > 1 ? '0.4' :
                                             '0';
         }
 
         function getWeight(d) {
-            return d > 384 ? '3.1' :
-                d > 330 ? '2.8' :
-                    d > 275 ? '2.5' :
-                        d > 220 ? '2.2' :
-                            d > 165 ? '1.9' :
-                                d > 111 ? '1.6' :
-                                    d > 56 ? '1.3' :
-                                        d > 1 ? '1' :
+            return d > 384 ? '4' :
+                d > 330 ? '3.5' :
+                    d > 275 ? '3' :
+                        d > 220 ? '2.5' :
+                            d > 165 ? '2' :
+                                d > 111 ? '1.5' :
+                                    d > 56 ? '1' :
+                                        d > 1 ? '0.5' :
                                             '0';
         }
 
-        function getColor(d) {
-            return d == '009EE0' ? '#009EE0' :
-                d == 'DC241F' ? '#DC241F' :
-                    d == '6AB023' ? '#6AB023' :
-                        d == '010101' ? '#010101' :
-                            d == '93117E' ? '#93117E' :
-                                '#ffffff';
+    //    function getColor(d) {
+    //        return d == '009EE0' ? '#009EE0' :
+    //            d == 'DC241F' ? '#DC241F' :
+      //              d == '6AB023' ? '#6AB023' :
+     //                   d == '010101' ? '#010101' :
+       //                     d == '93117E' ? '#93117E' :
+      //                          '#ffffff';
 
 
-        }
+     //   }
 
 
         //Estil
@@ -475,7 +475,7 @@
             return {
                 weight: getWeight(feature.properties.val),
                 opacity: getOpacity(feature.properties.val),
-                color: getColor(feature.properties.color),
+                color: 'red',
                 dashArray: '',
                 fillOpacity: 1,
 
@@ -483,6 +483,9 @@
         }
 
 
+        function zoomToFeature(e) {
+            mymap.flyToBounds(e.target.getBounds());
+        }
 
         //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
 
@@ -490,7 +493,9 @@
 
             layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.LINIA_ESTACIO + "<br><br> Validacions: " + feature.properties.val + "</h5>", { sticky: true });
 
-           
+            layer.on({
+                click: zoomToFeature
+            });
 
         }
 
