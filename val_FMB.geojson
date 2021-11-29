@@ -60,7 +60,7 @@
 { "type": "Feature", "properties": { "stop_name": "Girona", "sum": 57 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.170825, 41.39492 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Glòries", "sum": 265 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.187537, 41.402277 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Gorg", "sum": 85 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.233441, 41.440237 ] ] } },
-{ "type": "Feature", "properties": { "stop_name": "Gran Via - Marina", "sum": 40 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.180649, 41.39861 ] ] } },
+
 { "type": "Feature", "properties": { "stop_name": "Guinardó | Hospital de Sant Pau", "sum": 63 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.173989, 41.415962 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Horta", "sum": 118 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.159974, 41.429692 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Hospital Clínic", "sum": 298 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.151081, 41.388608 ] ] } },
