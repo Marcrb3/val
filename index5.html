@@ -475,13 +475,7 @@
                                             '0';
         }
 
-       function getColor(d) {
-            return d == '0' ? '#3366CC' :
-                d == '1' ? '#FFCC00' :
-                                '#ffffff';
-
-
-        }
+      
 
 
         //Estil
@@ -491,7 +485,7 @@
             return {
                 weight: getWeight(feature.properties.sum),
                 opacity: getOpacity(feature.properties.sum),
-                color: getColor(feature.properties.color),
+                color: '#FFCC00',
                 dashArray: '',
                 fillOpacity: 1,
 
