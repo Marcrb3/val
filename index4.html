@@ -502,9 +502,7 @@
         }
 
 
-        function zoomToFeature(e) {
-            mymap.flyToBounds(e.target.getBounds());
-        }
+        
 
         //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
 
@@ -512,9 +510,7 @@
 
             layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.LINIA_ESTACIO + "<br><br> Validacions: " + feature.properties.val + "</h5>", { sticky: true });
 
-            layer.on({
-                click: zoomToFeature
-            });
+         
 
         }
 
