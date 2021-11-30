@@ -63,7 +63,7 @@
 { "type": "Feature", "properties": { "stop_name": "Manresa", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 1.827185, 41.720393 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Martorell", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 1.926459, 41.478787 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Mataró", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.441068, 41.530395 ] ] } },
-{ "type": "Feature", "properties": { "stop_name": "Molins De Rei", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.02057, 41.409844 ] ] } },
+{ "type": "Feature", "properties": { "stop_name": "Molins De Rei", "sum": 41 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.02057, 41.409844 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Mollet-Sant Fost", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.21757, 41.533579 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Mollet-Santa Rosa", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.206189, 41.536597 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Montcada Bifurcació", "sum": 9 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.179853, 41.469591 ] ] } },
