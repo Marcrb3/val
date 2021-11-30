@@ -97,7 +97,7 @@
 { "type": "Feature", "properties": { "stop_name": "Sant Andreu De Llavaneres", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.498462, 41.555722 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Sant Celóni", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.490554, 41.685877 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Sant Cugat Del Valles", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.079731, 41.480973 ] ] } },
-{ "type": "Feature", "properties": { "stop_name": "Sant Feliu De Llobregat", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.047834, 41.382935 ] ] } },
+{ "type": "Feature", "properties": { "stop_name": "Sant Feliu De Llobregat", "sum": 28 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.047834, 41.382935 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Sant Joan Despí", "sum": 28 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.060147, 41.36854 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Sant Martí De Centelles", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.24893, 41.760583 ] ] } },
 { "type": "Feature", "properties": { "stop_name": "Sant Miquel De Gonteres Viladecavalls", "sum": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 1.974213, 41.568855 ] ] } },
