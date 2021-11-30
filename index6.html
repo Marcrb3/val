@@ -402,7 +402,7 @@
             z-index: 10000;
             right: 0;
 
-            margin-top: 16em;
+            margin-top: 19em;
             margin-right: 1em;
         }
 
@@ -410,6 +410,24 @@
         #fosc6:after {
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
+        }
+        #selected {
+            background-color: rgb(82, 82, 82);
+            color: rgb(240, 131, 8);
+            font-weight: bolder;
+            width: 12em;
+            position: absolute;
+            z-index: 10000;
+            right: 0;
+
+            margin-top: 16em;
+            margin-right: 1em;
+        }
+
+        #selected:hover,
+        #selected:after {
+            background-color: rgb(44, 44, 44);
+            color: rgb(240, 131, 8);
         }
     </style>
 </head>
@@ -419,8 +437,9 @@
     <a class="btn" id="fosc" href="https://marcrb3.github.io/val/index.html" role="button">Validacions Metro</a>
     <a class="btn" id="fosc2" href="https://marcrb3.github.io/val/index2.html" role="button">Validacions FGC</a>
     <a class="btn" id="fosc3" href="https://marcrb3.github.io/val/index3.html" role="button">Validacions Renfe</a>
-    <a class="btn" id="fosc4" href="https://marcrb3.github.io/val/index4.html" role="button">Validacions TMB Bus</a>
+    <a class="btn" id="fosc4" href="https://marcrb3.github.io/val/index4.html" role="button">Validacions TMB </a>
     <a class="btn" id="fosc5" href="https://marcrb3.github.io/val/index5.html" role="button">Validacions TUSGSAL</a>
+    <a class="btn" id="selected" href="#" role="button">Validacions NITBUS</a>
     <a class="btn" id="fosc6" href="https://marcrb3.github.io/val/index7.html" role="button">Validacions BAIXBUS</a>
 
     <div id="mapid"> </div>
