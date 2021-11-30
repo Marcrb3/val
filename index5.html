@@ -393,6 +393,24 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+        #fosc6 {
+            background-color: rgb(82, 82, 82);
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+            width: 12em;
+            position: absolute;
+            z-index: 10000;
+            right: 0;
+
+            margin-top: 16em;
+            margin-right: 1em;
+        }
+
+        #fosc6:hover,
+        #fosc6:after {
+            background-color: rgb(44, 44, 44);
+            color: rgb(255, 255, 255);
+        }
     </style>
 </head>
 
@@ -403,6 +421,7 @@
     <a class="btn" id="fosc3" href="https://marcrb3.github.io/val/index3.html" role="button">Validacions Renfe</a>
     <a class="btn" id="fosc4" href="https://marcrb3.github.io/val/index4.html" role="button">Validacions TMB Bus</a>
     <a class="btn" id="fosc5" href="https://marcrb3.github.io/val/index6.html" role="button">Validacions NITBUS</a>
+    <a class="btn" id="fosc6" href="https://marcrb3.github.io/val/index7.html" role="button">Validacions BAIXBUS</a>
 
     <div id="mapid"> </div>
 
@@ -427,7 +446,7 @@
                     //nord-est
                     [42.88239, 5.06357]
                 ],
-            }).setView([41.43835459276313, 2.2058950223637406], 13);
+            }).setView([41.385243705090105, 2.1402139383833516], 12);
 
             var Dark = L.mapboxGL({
                 style: 'mapbox://styles/marcrb3/cjsu9je764ne51fn719pub5lu',
@@ -494,7 +513,13 @@
                                             '0';
         }
 
-      
+       function getColor(d) {
+            return d == '0' ? '#3366CC' :
+                d == '1' ? '#FFCC00' :
+                                '#ffffff';
+
+
+        }
 
 
         //Estil
@@ -504,7 +529,7 @@
             return {
                 weight: getWeight(feature.properties.sum),
                 opacity: getOpacity(feature.properties.sum),
-                color: '#FFCC00',
+                color: getColor(feature.properties.color),
                 dashArray: '',
                 fillOpacity: 1,
 
@@ -512,6 +537,9 @@
         }
 
 
+        function zoomToFeature(e) {
+            mymap.flyToBounds(e.target.getBounds());
+        }
 
         //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
 
@@ -519,7 +547,9 @@
 
             layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.routes_rou + "<br><br> Validacions: " + feature.properties.sum + "</h5>", { sticky: true });
 
-           
+            layer.on({
+                click: zoomToFeature
+            });
 
         }
 
