@@ -253,8 +253,8 @@
         }
 
         #filtre {
-            background-image: linear-gradient(135deg, rgb(0, 41, 153), rgb(9, 16, 59));
-            background-color: rgb(0, 41, 153);
+            background-image: linear-gradient(135deg, rgb(4, 143, 108), rgb(2, 83, 63));
+            background-color: rgb(4, 143, 108);
             color: white;
             z-index: 10000;
             position: absolute;
@@ -265,7 +265,7 @@
 
         .filtre:hover,
         .filtre:focus {
-            background-image: linear-gradient(135deg, rgb(0, 41, 153), rgb(9, 16, 59)) !important;
+            background-image: linear-gradient(135deg, rgb(4, 143, 108), rgb(2, 83, 63)) !important;
             background-color: rgb(9, 16, 59);
             color: white !important;
         }
@@ -307,12 +307,12 @@
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
+            text-align: center;
             margin-top: 4em;
-            margin-right: 1em;
+            margin-left: 2em;
         }
 
         #fosc:hover,
@@ -325,13 +325,12 @@
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
-
+            text-align: center;
             margin-top: 7em;
-            margin-right: 1em;
+            margin-left: 2em;
         }
 
         #fosc2:hover,
@@ -339,17 +338,17 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
         #fosc3 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
-
+            text-align: center;
             margin-top: 10em;
-            margin-right: 1em;
+            margin-left: 2em;
         }
 
         #fosc3:hover,
@@ -357,17 +356,17 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
         #fosc4 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
-
+            text-align: center;
             margin-top: 13em;
-            margin-right: 1em;
+            margin-left: 2em;
         }
 
         #fosc4:hover,
@@ -375,17 +374,18 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
         #fosc5 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
-
+            text-align: center;
             margin-top: 16em;
-            margin-right: 1em;
+            margin-left: 2em;
+
         }
 
         #fosc5:hover,
@@ -393,17 +393,17 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
         #fosc6 {
             background-color: rgb(82, 82, 82);
             color: rgb(255, 255, 255);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
-
+            text-align: center;
             margin-top: 19em;
-            margin-right: 1em;
+            margin-left: 2em;
         }
 
         #fosc6:hover,
@@ -411,17 +411,17 @@
             background-color: rgb(44, 44, 44);
             color: rgb(255, 255, 255);
         }
+
         #selected {
             background-color: rgb(82, 82, 82);
             color: rgb(240, 131, 8);
             font-weight: bolder;
-            width: 12em;
+            width: 80%;
             position: absolute;
             z-index: 10000;
-            right: 0;
-
+            text-align: center;
             margin-top: 1em;
-            margin-right: 1em;
+            margin-left: 2em;
         }
 
         #selected:hover,
@@ -433,19 +433,85 @@
 </head>
 
 <body>
-    <a class="btn" id="selected" href="#" role="button">Validacions Metro</a>
-    <a class="btn" id="fosc" href="https://marcrb3.github.io/val/index2.html" role="button">Validacions FGC</a>
-    <a class="btn" id="fosc2" href="https://marcrb3.github.io/val/index3.html" role="button">Validacions Renfe</a>
-    <a class="btn" id="fosc3" href="https://marcrb3.github.io/val/index4.html" role="button">Validacions TMB</a>
-    <a class="btn" id="fosc4" href="https://marcrb3.github.io/val/index5.html" role="button">Validacions TUSGSAL</a>
-    <a class="btn" id="fosc5" href="https://marcrb3.github.io/val/index6.html" role="button">Validacions NITBUS</a>
-    <a class="btn" id="fosc6" href="https://marcrb3.github.io/val/index7.html" role="button">Validacions BAIXBUS</a>
-    <div id="mapid"> </div>
+
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Categories -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                
+                <li><a href="#messages" role="tab"><i class="fa fa-map"></i></a></li>
+                
+                <li><a href="#profile" role="tab"><i class="fa fa-search"></i></a></li>
+
+
+                <li><a href="#settings" role="tab" target="_blank"><i class="fa fa-gear"></i></a></li>
+            </ul>
+
+            <ul role="tablist">
+                <li><a href="mailto:marcrb3@gmail.com" role="tab"><i class="fa fa-question"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header" style="text-align: center;">Cerca<span class="sidebar-close"><i
+                            class="fa fa-times"></i></span>
+                </h1>
+                <p style="margin-top: 1em; font-size: 1.2em; "><strong>Introdueix una adreça, municipi, codi postal o
+                        topònim.</strong></p>
+
+
+            </div>
+
+            <div class="sidebar-pane" id="messages">
+                <h1 class="sidebar-header" style="margin-bottom: 1em; text-align: center;">Mapa de validacions<span
+                        class="sidebar-close"><i class="fa fa-times"></i></span>
+                </h1>
+
+                
+            <label style="padding-right: 1em">Validacions per operador: </label>   
+                <select name="select" id="filtre" class="tipus" style="padding-right: 1em;">
+                    <option value="buit" hidden selected>Selecciona</option>
+                    <option value="FMB">Metro</option>
+                    <option value="FGC">FGC</option>
+                    <option value="ROD">Rodalies</option>
+                    <option value="TB">TMB</option>
+                    <option value="TRAM">TRAM</option>
+                    <option value="TUSGSAL">TUSGSAL</option>
+                    <option value="BAIXBUS">BaixBus</option>
+                    <option value="NITBUS">NitBus</option>
+                </select>
+
+            </div>
+
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header" style="text-align: center;">Configuració<span class="sidebar-close"><i
+                            class="fa fa-times"></i></span>
+                </h1>
+                <p style="margin-top: 1em; font-size: 1.2em;"><strong>Selecciona el tema del visor:</strong></p>
+                <div class="tema">
+
+                    <a class="btn" id="fosc" href="#" role="button">Fosc</a>
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+
+
+
+
+
+    <div id="mapid" class="sidebar-map"> </div>
 
     <script>
         var mymap;
         var validacions = $.ajax({
-            url: "https://raw.githubusercontent.com/Marcrb3/val/main/val_FMB.geojson",
+            url: "https://raw.githubusercontent.com/Marcrb3/val/main/val_FER.geojson",
             dataType: "json",
             success: console.log("Capa geojson carregada correctament."),
             error: function (xhr) {
@@ -453,15 +519,23 @@
             }
         })
         var linies = $.ajax({
-            url: "https://raw.githubusercontent.com/Marcrb3/val/main/linies.geojson",
+            url: "https://raw.githubusercontent.com/Marcrb3/val/main/ferroviari.geojson",
             dataType: "json",
             success: console.log("Capa geojson 2 carregada correctament."),
             error: function (xhr) {
                 alert(xhr.statusText)
             }
         })
+        var val_bus = $.ajax({
+            url: "https://raw.githubusercontent.com/Marcrb3/val/main/val_bus.geojson",
+            dataType: "json",
+            success: console.log("Capa geojson 3 carregada correctament."),
+            error: function (xhr) {
+                alert(xhr.statusText)
+            }
+        })
 
-        $.when(linies, validacions).done(function () {
+        $.when(linies, validacions, val_bus).done(function () {
 
             mymap = L.map('mapid', {
                 minZoom: 9,
@@ -471,232 +545,637 @@
                     //nord-est
                     [42.88239, 5.06357]
                 ],
-            }).setView([41.385243705090105, 2.1402139383833516], 12);
+            }).setView([41.385243705090105, 2.1402139383833516], 11.5);
 
-
-
-            var Dark = L.mapboxGL({
-                style: 'mapbox://styles/marcrb3/cjsu9je764ne51fn719pub5lu',
-                accessToken: 'pk.eyJ1IjoibWFyY3JiMyIsImEiOiJjanJqanZvMXowYzdnNDRsbGN4N3JyMGhuIn0.im2TOkqyqEpCXhN4LWoZuA',
-            })
+            var sidebar = L.control.sidebar('sidebar', {
+                position: 'left'
+            }).addTo(mymap);
+            sidebar.open('messages');
 
 
             var Topo = L.mapboxGL({
                 style: 'mapbox://styles/marcrb3/ckvkmr0pi400f14oap3nljgkx',
                 accessToken: 'pk.eyJ1IjoibWFyY3JiMyIsImEiOiJjanJqanZvMXowYzdnNDRsbGN4N3JyMGhuIn0.im2TOkqyqEpCXhN4LWoZuA',
+                attribution: 'Developed by Marc Roca Ballesteros ©'
             }).addTo(mymap);
 
 
             var basemap = {
-                'Topogràfic': Topo,
-                'Fosc': Dark
-
+                'Topogràfic': Topo
             };
 
-            var kxIncidents, kyIncidents, kyCorones, kyAMB;
+            var kxIncidents, kyIncidents, kyCorones, kyAMB, kyBus;
             var capes = L.control.layers(basemap, null, { collapsed: false });
             capes.addTo(mymap);
             capes._container.remove();
             L.control.scale().addTo(mymap);
-            grup = L.layerGroup(kxIncidents, kyIncidents);
+            grup = L.layerGroup(kxIncidents, kyIncidents, Topo, kyAMB, kyBus);
             L.control.locate({ position: 'topleft', flyTo: "true", initialZoomLevel: "13" }).addTo(mymap);
+            var control = L.Control.geocoder({ placeholder: "Cerca..." });
+
+            document.getElementById('profile').appendChild(
+                control.onAdd(mymap)
+            );
 
 
-
-
-
-
+            L.Map.include({
+                'clearLayers': function () {
+                    this.eachLayer(function (layer) {
+                        this.removeLayer(layer);
+                    }, this);
+                }
+            });
 
             //Carreguem la capa al iniciar el mapa
 
+            kyIncidents = L.geoJSON(validacions.responseJSON);
 
-            kyIncidents = L.geoJSON(validacions.responseJSON, {
-                onEachFeature: onEachFeature,
+            kyAMB = L.geoJSON(linies.responseJSON);
 
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, {
-                        radius: getRadius(feature.properties.sum),
-                        fillColor: "white",
-                        color: "#000",
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 0.5
-                    });
+            kyBus = L.geoJSON(val_bus.responseJSON);
+
+
+
+            //Obrim la secció d'informació de la sidebar 
+
+            var sidebarDiv = document.getElementById('sidebar');
+
+
+            toggleSidebar = function () {
+                if (hasClass(sidebarDiv, 'collapsed')) {
+                    sidebar.open('home');
+
                 }
-            }).addTo(mymap);
+                else { sidebar.open('home') };
+            }
 
-            kyAMB = L.geoJSON(linies.responseJSON, {
-                style: style_line,
-                onEachFeature: onEachFeature2
-            }).addTo(mymap);
+            function hasClass(element, cls) {
+                return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+            }
 
-            kyIncidents.bringToFront();
 
+            //Netegem el mapa per poder alternar entre capes
+
+            function neteja() {
+                mymap.clearLayers();
+                Topo.addTo(mymap);
+            }
+
+
+            //Desplegable i filtratge per operador
+
+            $("select.tipus").change(function () {
+                selectedTipus = $(this).children("option:selected").val();
+
+                console.log(selectedTipus);
+
+                if (selectedTipus == "FMB") {
+                    neteja();
+
+                    kyIncidents = L.geoJSON(validacions.responseJSON, {
+                        onEachFeature: onEachFeature,
+                        style: style,
+                        pointToLayer: function (feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: getRadiusFMB(feature.properties.val),
+                                fillColor: "white",
+                                color: "#000",
+                                weight: 1,
+                                opacity: 1,
+                                fillOpacity: 0.5
+
+                            });
+
+                        },
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "FMB");
+
+                        }
+
+                    }).addTo(mymap);
+
+                    kyAMB = L.geoJSON(linies.responseJSON, {
+                        style: style_line_FMB,
+                        onEachFeature: onEachFeature2,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "FMB");
+
+                        }
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+
+                else if (selectedTipus == "FGC") {
+                    neteja();
+                    kyIncidents = L.geoJSON(validacions.responseJSON, {
+                        onEachFeature: onEachFeature,
+                        style: style,
+                        pointToLayer: function (feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: getRadiusFGC(feature.properties.val),
+                                fillColor: "white",
+                                color: "#000",
+                                weight: 1,
+                                opacity: 1,
+                                fillOpacity: 0.5
+
+                            });
+
+                        },
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "FGC");
+
+                        }
+
+                    }).addTo(mymap);
+
+                    kyAMB = L.geoJSON(linies.responseJSON, {
+                        style: style_line_FGC,
+                        onEachFeature: onEachFeature2,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "FGC");
+
+                        }
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+
+                else if (selectedTipus == "ROD") {
+                    neteja();
+                    kyIncidents = L.geoJSON(validacions.responseJSON, {
+                        onEachFeature: onEachFeature,
+                        style: style,
+                        pointToLayer: function (feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: getRadiusROD(feature.properties.val),
+                                fillColor: "white",
+                                color: "#000",
+                                weight: 1,
+                                opacity: 1,
+                                fillOpacity: 0.5
+
+                            });
+
+                        },
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "ROD");
+
+                        }
+
+                    }).addTo(mymap);
+
+                    kyAMB = L.geoJSON(linies.responseJSON, {
+                        style: style_line_ROD,
+                        onEachFeature: onEachFeature2,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "ROD");
+
+                        }
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+
+                else if (selectedTipus == "TB") {
+                    neteja();
+                    kyBus = L.geoJSON(val_bus.responseJSON, {
+                        onEachFeature: onEachFeatureBus,
+                        style: styleTMB,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "TMB");
+
+                        }
+
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+
+                else if (selectedTipus == "TUSGSAL") {
+                    neteja();
+                    kyBus = L.geoJSON(val_bus.responseJSON, {
+                        onEachFeature: onEachFeatureBus,
+                        style: styleTUG,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "TUSGSAL");
+
+                        }
+
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+
+                else if (selectedTipus == "NITBUS") {
+                    neteja();
+                    kyBus = L.geoJSON(val_bus.responseJSON, {
+                        onEachFeature: onEachFeatureBus,
+                        style: styleNB,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "NITBUS");
+
+                        }
+
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+
+                else if (selectedTipus == "BAIXBUS") {
+                    neteja();
+                    kyBus = L.geoJSON(val_bus.responseJSON, {
+                        onEachFeature: onEachFeatureBus,
+                        style: styleBB,
+                        filter: function (feature, layer) {
+
+                            return (feature.properties.operador == "BAIXBUS");
+
+                        }
+
+                    }).addTo(mymap);
+                    sidebar.close();
+                }
+            });
+
+
+//Paletes de colors
+
+            function getColorFMB(d) {
+                return d == 'L11' ? '#89B94C' :
+                    d == 'L10S' ? '#00A6D6' :
+                        d == 'L10N' ? '#00A6D6' :
+                            d == 'L9N' ? '#FB712B' :
+                                d == 'L9S' ? '#FB712B' :
+                                    d == 'L5' ? '#005A97' :
+                                        d == 'L4' ? '#F7A30E' :
+                                            d == 'L3' ? '#1EB53A' :
+                                                d == 'L2' ? '#93248F' :
+                                                    d == 'L1' ? '#CE1126' :
+                                                        '#ffffff';
+            }
+
+            function getColorFGC(d) {
+                return d == 'MM' ? '#000000' :
+                    d == 'R50' ? '#00738a' :
+                        d == 'FV' ? '#0A57A3' :
+                            d == 'R5' ? '#3dbfc3' :
+                                d == 'R53' ? '#3dbfc3' :
+                                    d == 'S8' ? '#49C0DE' :
+                                        d == 'S3' ? '#4F868E' :
+                                            d == 'ES' ? '#5A5858' :
+                                                d == 'R60' ? '#5b5b5b' :
+                                                    d == 'S5' ? '#5B8FCB' :
+                                                        d == 'S5S' ? '#5B8FCB' :
+                                                            d == 'L6' ? '#797FBC' :
+                                                                d == 'S2' ? '#88BB0B' :
+                                                                    d == 'S7' ? '#9B2743' :
+                                                                        d == 'S4' ? '#A78600' :
+                                                                            d == 'L7' ? '#B2600B' :
+                                                                                d == 'L12' ? '#b2aed3' :
+                                                                                    d == 'R6' ? '#b3b3b3' :
+                                                                                        d == 'R63' ? '#b3b3b3' :
+                                                                                            d == 'S9' ? '#DF4661' :
+                                                                                                d == 'L8' ? '#E274AA' :
+                                                                                                    d == 'S6' ? '#E40046' :
+                                                                                                        d == 'S1' ? '#EF7900' :
+                                                                                                            '#ffffff';
+            }
+
+            function getColorROD(d) {
+                return d == 'R8' ? '#88006a' :
+                    d == 'R7' ? '#b57bba' :
+                        d == 'R4' ? '#f6a30d' :
+                            d == 'R3' ? '#ea412b' :
+                                d == 'R2S' ? '#136524' :
+                                    d == 'R2N' ? '#d0de00' :
+                                        d == 'R2' ? '#26a741' :
+                                            d == 'R1' ? '#7dbcec' :
+                                                '#ffffff';
+            }
+
+            function getRadiusFMB(d) {
+                return d > 500 ? '18' :
+                    d > 243 ? '16' :
+                        d > 154 ? '14' :
+                            d > 125 ? '12' :
+                                d > 85 ? '10' :
+                                    d > 63 ? '8' :
+                                        d > 49 ? '6' :
+                                            d > 28 ? '4' :
+                                                d > 1 ? '2' :
+                                                    '1';
+            }
+
+            function getRadiusROD(d) {
+                return d > 200 ? '18' :
+                    d > 150 ? '16' :
+                        d > 100 ? '15' :
+                            d > 75 ? '14' :
+                                d > 50 ? '12' :
+                                    d > 25 ? '10' :
+                                        d > 15 ? '8' :
+                                            d > 10 ? '6' :
+                                                d > 1 ? '4' :
+                                                    '2';
+            }
+
+
+            function getRadiusFGC(d) {
+                return d > 200 ? '18' :
+                    d > 150 ? '16' :
+                        d > 100 ? '15' :
+                            d > 75 ? '14' :
+                                d > 50 ? '12' :
+                                    d > 25 ? '10' :
+                                        d > 15 ? '8' :
+                                            d > 10 ? '6' :
+                                                d > 1 ? '4' :
+                                                    '2';
+            }
+
+            function getOpacityTMB(d) {
+                return d > 384 ? '1' :
+                    d > 330 ? '0.9' :
+                        d > 275 ? '0.8' :
+                            d > 220 ? '0.7' :
+                                d > 165 ? '0.6' :
+                                    d > 111 ? '0.5' :
+                                        d > 56 ? '0.45' :
+                                            d > 1 ? '0.4' :
+                                                '0';
+            }
+
+            function getWeightTMB(d) {
+                return d > 384 ? '4' :
+                    d > 330 ? '3.5' :
+                        d > 275 ? '3' :
+                            d > 220 ? '2.5' :
+                                d > 165 ? '2' :
+                                    d > 111 ? '1.5' :
+                                        d > 56 ? '1' :
+                                            d > 1 ? '0.5' :
+                                                '0';
+            }
+
+            function getOpacityTUG(d) {
+            return d > 546 ? '1' :
+                d > 455 ? '0.9' :
+                    d > 384 ? '0.8' :
+                        d > 224 ? '0.7' :
+                            d > 132 ? '0.6' :
+                                d > 56 ? '0.5' :
+                                    d > 24 ? '0.45' :
+                                        d > 1 ? '0.4' :
+                                            '0';
+        }
+
+        function getWeightTUG(d) {
+            return d > 546 ? '4' :
+                d > 455 ? '3.5' :
+                    d > 384 ? '3' :
+                        d > 224 ? '2.5' :
+                            d > 132 ? '2' :
+                                d > 56 ? '1.5' :
+                                    d > 24 ? '1' :
+                                        d > 1 ? '0.5' :
+                                            '0';
+        }
+
+        function getOpacityNB(d) {
+            return d > 48 ? '1' :
+                d > 40 ? '0.9' :
+                    d > 30 ? '0.8' :
+                        d > 25 ? '0.7' :
+                            d > 20 ? '0.6' :
+                                d > 14 ? '0.5' :
+                                    d > 8 ? '0.45' :
+                                        d > 1 ? '0.4' :
+                                            '0';
+        }
+
+        function getWeightNB(d) {
+            return d > 48 ? '4' :
+                d > 40 ? '3.5' :
+                    d > 30 ? '3' :
+                        d > 25 ? '2.5' :
+                            d > 20 ? '2' :
+                                d > 14 ? '1.5' :
+                                    d > 8 ? '1' :
+                                        d > 1 ? '0.5' :
+                                            '0';
+        }
+
+        function getOpacityBB(d) {
+            return d > 1264 ? '1' :
+                d > 408 ? '0.9' :
+                    d > 288 ? '0.8' :
+                        d > 198 ? '0.7' :
+                            d > 108 ? '0.6' :
+                                d > 54 ? '0.5' :
+                                    d > 18 ? '0.45' :
+                                        d > 1 ? '0.4' :
+                                            '0';
+        }
+
+        function getWeightBB(d) {
+            return d > 1264 ? '4' :
+                d > 408 ? '3.5' :
+                    d > 288 ? '3' :
+                        d > 198 ? '2.5' :
+                            d > 108 ? '2' :
+                                d > 54 ? '1.5' :
+                                    d > 18 ? '1' :
+                                        d > 1 ? '0.5' :
+                                            '0';
+        }
+            //Estil
+
+            function style(feature) {
+                return {
+                    weight: 1,
+                    color: 'black',
+                    dashArray: '',
+                    fillOpacity: 0.55
+
+
+                };
+            }
+            function styleTMB(feature) {
+                return {
+                    weight: getWeightTMB(feature.properties.val),
+                    opacity: getOpacityTMB(feature.properties.val),
+                    color: 'red',
+                    dashArray: '',
+                    fillOpacity: 1,
+
+
+                };
+            }
+            
+            function styleTUG(feature) {
+                return {
+                    weight: getWeightTUG(feature.properties.val),
+                    opacity: getOpacityTUG(feature.properties.val),
+                    color: '#FFCC00',
+                    dashArray: '',
+                    fillOpacity: 1,
+                };
+            }
+
+            function styleNB(feature) {
+                return {
+                    weight: getWeightNB(feature.properties.val),
+                    opacity: getOpacityNB(feature.properties.val),
+                    color: '#3366CC',
+                    dashArray: '',
+                    fillOpacity: 1,
+                };
+            }
+
+            function styleBB(feature) {
+                return {
+                    weight: getWeightBB(feature.properties.val),
+                    opacity: getOpacityBB(feature.properties.val),
+                    color: '#FFCC00',
+                    dashArray: '',
+                    fillOpacity: 1,
+                };
+            }
+
+            function style_line_FMB(feature) {
+                return {
+                    weight: 2.5,
+                    opacity: 1,
+                    color: getColorFMB(feature.properties.routes_rou),
+                    dashArray: '',
+                    fillOpacity: 1,
+
+                };
+            }
+            function style_line_FGC(feature) {
+                return {
+                    weight: 2.5,
+                    opacity: 1,
+                    color: getColorFGC(feature.properties.routes_rou),
+                    dashArray: '',
+                    fillOpacity: 1,
+
+                };
+            }
+            function style_line_ROD(feature) {
+                return {
+                    weight: 2.5,
+                    opacity: 1,
+                    color: getColorROD(feature.properties.routes_rou),
+                    dashArray: '',
+                    fillOpacity: 1,
+
+                };
+            }
+
+
+            //ressaltem el contorn dels poligons al fer hover
+            function highlightFeature(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 3,
+                    color: 'black',
+                    dashArray: '',
+                    fillOpacity: 0.55
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
+            }
+
+            function highlightFeatureL(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
+            }
+
+            //restablim el contorn al fer mouseout
+
+
+            function resetHighlight(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 1,
+                    color: 'black',
+                    dashArray: '',
+                    fillOpacity: 0.55
+                });
+            }
+
+            function resetHighlightL(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 2.5,
+
+                });
+
+            }
+
+            function zoomToFeature(e) {
+                mymap.flyToBounds(e.target.getBounds());
+            }
+
+            function zoomToFeature2(e) {
+
+                mymap.flyTo(e.latlng, 16);
+            }
+
+            //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
+
+            function onEachFeature(feature, layer) {
+
+                layer.bindTooltip("<h5 class='infoHeader'><strong>Parada: " + feature.properties.stop_name + "<br><br> Validacions: " + feature.properties.val + "</h5>");
+
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight,
+                    click: zoomToFeature2
+                });
+
+            }
+
+            function onEachFeature2(feature, layer) {
+                layer.bindTooltip("<h5 class='infoHeader'><strong>Línia: " + feature.properties.routes_rou + "<br><br>" + feature.properties.routes_r_1 + "</h5>", { sticky: true });
+
+                layer.on({
+                    mouseover: highlightFeatureL,
+                    mouseout: resetHighlightL,
+                    click: zoomToFeature
+                });
+            }
+
+            function onEachFeatureBus(feature, layer) {
+
+                layer.bindTooltip("<h5 class='infoHeader'><strong>Linia: " + feature.properties.routes_rou + "<br><br> Validacions: " + feature.properties.val + "</h5>", { sticky: true });
+
+                layer.on({
+                    click: zoomToFeature
+                });
+
+            }
 
         });
-
-        //Paletes de colors
-
-        function getColor(d) {
-            return d == 'L11' ? '#89B94C' :
-                d == 'L10S' ? '#00A6D6' :
-                    d == 'L10N' ? '#00A6D6' :
-                        d == 'L9N' ? '#FB712B' :
-                            d == 'L9S' ? '#FB712B' :
-                                d == 'L5' ? '#005A97' :
-                                    d == 'L4' ? '#F7A30E' :
-                                        d == 'L3' ? '#1EB53A' :
-                                            d == 'L2' ? '#93248F' :
-                                                d == 'L1' ? '#CE1126' :
-                                                    '#ffffff';
-        }
-
-        function getRadius(d) {
-            return d > 500 ? '18' :
-                d > 243 ? '16' :
-                    d > 154 ? '14' :
-                        d > 125 ? '12' :
-                            d > 85 ? '10' :
-                                d > 63 ? '8' :
-                                    d > 49 ? '6' :
-                                        d > 28 ? '4' :
-                                            d > 1 ? '2' :
-                                                '1';
-        }
-
-
-
-        //Estil
-
-        function style(feature) {
-            return {
-                weight: 3,
-                opacity: 1,
-                color: 'white',
-                dashArray: '',
-
-
-            };
-        }
-
-        function style_line(feature) {
-            return {
-                weight: 2.5,
-                opacity: 1,
-                color: getColor(feature.properties.routes_rou),
-                dashArray: '',
-                fillOpacity: 1,
-
-            };
-        }
-
-
-
-
-        //ressaltem el contorn dels poligons al fer hover
-        function highlightFeature(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 3,
-                color: 'black',
-                dashArray: '',
-                fillOpacity: 0.55
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                layer.bringToFront();
-            }
-        }
-
-        function highlightFeatureL(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 5,
-
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                layer.bringToFront();
-            }
-        }
-
-        //restablim el contorn al fer mouseout
-
-
-
-        function resetHighlight(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 1,
-                color: 'black',
-                dashArray: '',
-                fillOpacity: 0.55
-            });
-        }
-
-        function resetHighlightL(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 2.5,
-
-            });
-            layer.bringtoBack();
-        }
-
-        function highlightFeature2(e) {
-            var layer = e.target;
-
-            layer.setStyle({
-                weight: 3,
-                color: 'orange',
-                dashArray: '',
-                fillOpacity: 0.55
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                layer.bringToFront();
-            }
-        }
-
-        function zoomToFeature(e){
-            mymap.flyToBounds(e.target.getBounds());
-        }
-
-        function zoomToFeature2(e){
-            
-            mymap.flyTo(e.latlng, 16);
-        }
-        
-
-
-        //Omplim el contingut de la sidebar al clicar sobre qualsevol dels barris
-
-        function onEachFeature(feature, layer) {
-
-            layer.bindTooltip("<h5 class='infoHeader'><strong>Parada: " + feature.properties.stop_name + "<br><br> Validacions: " + feature.properties.sum + "</h5>");
-
-            layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
-                click: zoomToFeature2
-              });
-
-        }
-
-        function onEachFeature2(feature, layer) {
-            layer.bindTooltip("<h5 class='infoHeader'><strong>Línia: " + feature.properties.routes_rou + "<br><br>" + feature.properties.routes_r_1 + "</h5>", { sticky: true });
-
-            layer.on({
-                mouseover: highlightFeatureL,
-                mouseout: resetHighlightL,
-                click: zoomToFeature
-            });
-        }
-
     </script>
 
 </body>
