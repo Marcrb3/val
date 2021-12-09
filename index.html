@@ -225,10 +225,10 @@
                         <a onclick=drawTB() class="btn btn-primary">Bus TMB</a>
                     </div>
                 </div>
-                <div class="card" style="width: 100%;">
-                    <img class="card-img-top" src="./templates/metro.png" alt="">
+                <div class="card" style="width: 100%;" onclick=drawTRAM()>
+                    <img class="card-img-top" src="./templates/TRAM.PNG" alt="">
                     <div class="card-body">
-                        <a onclick="" class="btn btn-primary">TRAM</a>
+                        <a onclick=drawTRAM() class="btn btn-primary">TRAM</a>
                     </div>
                 </div>
                 <div class="card" style="width: 100%;" onclick=drawTUSGSAL()>
@@ -518,6 +518,44 @@
                 sidebar.close();
             }
 
+            drawTRAM = function () {
+                neteja();
+                mymap.setView([41.385243705090105, 2.1402139383833516], 11.5);
+                kyBus = L.geoJSON(val_bus.responseJSON, {
+                    onEachFeature: onEachFeatureBus,
+                    style: styleTRAM,
+                    filter: function (feature, layer) {
+
+                        return (feature.properties.operador == "TRAM");
+
+                    }
+
+                }).addTo(mymap);
+                kyIncidents = L.geoJSON(validacions.responseJSON, {
+                    onEachFeature: onEachFeature,
+                    
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            radius: 2.5,
+                            fillColor: "white",
+                            color: "#000",
+                            weight: 1,
+                            opacity: 1,
+                            fillOpacity: 1
+
+                        });
+
+                    },
+                    filter: function (feature, layer) {
+
+                        return (feature.properties.operador == "TRAM");
+
+                    }
+                }).addTo(mymap);
+
+                sidebar.close();
+            }
+
             drawTUSGSAL = function () {
                 neteja();
                 mymap.setView([41.43764679984083, 2.2089849270448174], 12.5);
@@ -758,6 +796,26 @@
                                             d > 1 ? '0.5' :
                                                 '0';
             }
+
+            function getOpacityTRAM(d) {
+                return d > 300 ? '1' :
+                    d > 275 ? '0.85' :
+                        d > 250 ? '0.7' :
+                            d > 150 ? '0.6' :
+                                d > 75 ? '0.5' :
+                                    d > 35 ? '0.4' :
+                                        '0';
+            }
+
+            function getWeightTRAM(d) {
+                return d > 300 ? '4' :
+                    d > 275 ? '3.5' :
+                        d > 250 ? '3' :
+                            d > 150 ? '2' :
+                                d > 75 ? '1' :
+                                    d > 35 ? '0.5' :
+                                        '0';
+            }
             //Estil
 
             function style(feature) {
@@ -807,6 +865,16 @@
                     weight: getWeightBB(feature.properties.val),
                     opacity: getOpacityBB(feature.properties.val),
                     color: '#FFCC00',
+                    dashArray: '',
+                    fillOpacity: 1,
+                };
+            }
+
+            function styleTRAM(feature) {
+                return {
+                    weight: getWeightTRAM(feature.properties.val),
+                    opacity: getOpacityTRAM(feature.properties.val),
+                    color: 'rgb(4, 143, 108)',
                     dashArray: '',
                     fillOpacity: 1,
                 };
