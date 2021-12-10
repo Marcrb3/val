@@ -152,33 +152,53 @@
 
         .btn-primary:hover,
         .btn-primary:after {
-            background-color: rgb(2, 83, 63);
+            background-color: rgb(4, 143, 108);
         }
 
         .card {
             margin-bottom: 2em;
         }
 
-        .warning{
+        .warning {
             border: dotted 1px black;
             text-align: center;
             padding-bottom: 1em;
             padding-top: 1em;
             margin-right: 1em;
-          
-        }
-      
-       
 
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgb(100, 100, 100);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(4, 143, 108);
+        }
     </style>
 
 
 </head>
 
 <body>
-    
-        
-    
+
+
+
     <div id="sidebar" class="sidebar collapsed">
         <!-- Categories -->
         <div class="sidebar-tabs">
@@ -216,7 +236,8 @@
                         class="sidebar-close"><i class="fa fa-times"></i></span>
                 </h1>
                 <p class="warning"><strong>Títol: T-Usual 5 dies</strong><br><br>
-                    <strong>Dia: 17/11/2021</strong></p>
+                    <strong>Dia: 17/11/2021</strong>
+                </p>
                 <div class="card" style="width: 100%;" onclick=drawTMB()>
                     <img class="card-img-top" src="./templates/metro.PNG" alt="">
                     <div class="card-body">
@@ -404,7 +425,7 @@
 
             drawTMB = function () {
                 neteja();
-                
+
                 mymap.setView([41.385243705090105, 2.1402139383833516], 11.5);
 
                 kyIncidents = L.geoJSON(validacions.responseJSON, {
@@ -420,14 +441,14 @@
                             fillOpacity: 0.5
 
                         });
-                        
+
                     },
                     filter: function (feature, layer) {
 
                         return (feature.properties.operador == "FMB");
-                        
+
                     }
-                    
+
                 }).addTo(mymap);
 
                 kyAMB = L.geoJSON(linies.responseJSON, {
@@ -440,7 +461,7 @@
                     }
                 }).addTo(mymap);
                 sidebar.close();
-                
+
             }
 
 
@@ -551,7 +572,7 @@
                 }).addTo(mymap);
                 kyIncidents = L.geoJSON(validacions.responseJSON, {
                     onEachFeature: onEachFeature,
-                    
+
                     pointToLayer: function (feature, latlng) {
                         return L.circleMarker(latlng, {
                             radius: 2.5,
@@ -615,7 +636,7 @@
                     filter: function (feature, layer) {
 
                         return (feature.properties.operador == "BAIXBUS");
-                        
+
                     }
 
                 }).addTo(mymap);
