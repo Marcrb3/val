@@ -8,14 +8,14 @@
     <meta charset="utf-8">
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="leaflet-sidebar.js"></script>
+    <script src="leaflet-sidebar_dark.js"></script>
     <!-- <script src="https://raw.github.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script> -->
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
 
-    <link rel="stylesheet" href="leaflet-sidebar.css" />
+    <link rel="stylesheet" href="leaflet-sidebar_dark.css" />
 
     <!-- Mapbox GL -->
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css" rel='stylesheet' />
@@ -102,6 +102,7 @@
             position: relative;
         }
 
+        
         #Clar {
             background-color: rgb(236, 234, 234);
             color: rgb(22, 22, 22);
@@ -119,6 +120,7 @@
             background-color: rgb(156, 156, 156);
             color: rgb(255, 255, 255);
         }
+       
 
 
         #fosc {
@@ -160,14 +162,21 @@
         }
 
         .warning{
-            border: dotted 1px black;
+            border: dotted 1px white;
             text-align: center;
             padding-bottom: 1em;
             padding-top: 1em;
             margin-right: 1em;
-          
+            color: white;
         }
-      
+        .leaflet-control-zoom-in,
+        .leaflet-control-zoom-out, 
+        .leaflet-bar-part.leaflet-bar-part-single,
+        
+        .leaflet-control-scale-line {
+            background: black !important;
+            color: white !important;
+        }
        
 
     </style>
@@ -184,16 +193,16 @@
         <div class="sidebar-tabs">
             <ul role="tablist">
 
-                <li><a href="#messages" role="tab"><i class="fa fa-map"></i></a></li>
+                <li><a href="#messages" role="tab"><i class="fa fa-map" style="color: white;"></i></a></li>
 
-                <li><a href="#profile" role="tab"><i class="fa fa-search"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="fa fa-search" style="color: white;"></i></a></li>
 
 
-                <li><a href="#settings" role="tab" target="_blank"><i class="fa fa-gear"></i></a></li>
+                <li><a href="#settings" role="tab" target="_blank"><i class="fa fa-gear" style="color: white;"></i></a></li>
             </ul>
 
             <ul role="tablist">
-                <li><a href="mailto:marcrb3@gmail.com" role="tab"><i class="fa fa-question"></i></a></li>
+                <li><a href="mailto:marcrb3@gmail.com" role="tab"><i class="fa fa-question" style="color: white;"></i></a></li>
             </ul>
         </div>
 
@@ -205,7 +214,7 @@
                 <h1 class="sidebar-header" style="text-align: center;">Cerca<span class="sidebar-close"><i
                             class="fa fa-times"></i></span>
                 </h1>
-                <p style="margin-top: 1em; font-size: 1.2em; "><strong>Introdueix una adreça, municipi, codi postal o
+                <p style="margin-top: 1em; font-size: 1.2em; color: white;"><strong>Introdueix una adreça, municipi, codi postal o
                         topònim.</strong></p>
 
 
@@ -272,10 +281,10 @@
                 <h1 class="sidebar-header" style="text-align: center;">Configuració<span class="sidebar-close"><i
                             class="fa fa-times"></i></span>
                 </h1>
-                <p style="margin-top: 1em; font-size: 1.2em;"><strong>Selecciona el tema del visor:</strong></p>
+                <p style="margin-top: 1em; font-size: 1.2em; color: white;"><strong>Selecciona el tema del visor:</strong></p>
                 <div class="tema">
-                    <a class="btn" id="Clar" href="#" role="button">Clar</a>
-                    <a class="btn" id="fosc" href="indexDark.html" role="button">Fosc</a>
+                    <a class="btn" id="Clar" href="index.html" role="button">Clar</a>
+                    <a class="btn" id="fosc" href="#" role="button">Fosc</a>
                 </div>
             </div>
 
@@ -332,7 +341,7 @@
 
 
             var Topo = L.mapboxGL({
-                style: 'mapbox://styles/marcrb3/ckvkmr0pi400f14oap3nljgkx',
+                style: 'mapbox://styles/marcrb3/cjsu9je764ne51fn719pub5lu',
                 accessToken: 'pk.eyJ1IjoibWFyY3JiMyIsImEiOiJjanJqanZvMXowYzdnNDRsbGN4N3JyMGhuIn0.im2TOkqyqEpCXhN4LWoZuA',
                 attribution: 'Developed by Marc Roca Ballesteros ©'
             }).addTo(mymap);
