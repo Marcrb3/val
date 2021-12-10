@@ -316,7 +316,7 @@
 
 
             var Topo = L.mapboxGL({
-                 style: 'mapbox://styles/marcrb3/cjsu9je764ne51fn719pub5lu',
+                style: 'mapbox://styles/marcrb3/ckvkmr0pi400f14oap3nljgkx',
                 accessToken: 'pk.eyJ1IjoibWFyY3JiMyIsImEiOiJjanJqanZvMXowYzdnNDRsbGN4N3JyMGhuIn0.im2TOkqyqEpCXhN4LWoZuA',
                 attribution: 'Developed by Marc Roca Ballesteros ©'
             }).addTo(mymap);
@@ -384,10 +384,11 @@
             }
 
 
-            //Desplegable i filtratge per operador
+            //Filtratge per operador
 
             drawTMB = function () {
                 neteja();
+                
                 mymap.setView([41.385243705090105, 2.1402139383833516], 11.5);
 
                 kyIncidents = L.geoJSON(validacions.responseJSON, {
@@ -403,14 +404,14 @@
                             fillOpacity: 0.5
 
                         });
-
+                        
                     },
                     filter: function (feature, layer) {
 
                         return (feature.properties.operador == "FMB");
-
+                        
                     }
-
+                    
                 }).addTo(mymap);
 
                 kyAMB = L.geoJSON(linies.responseJSON, {
@@ -423,6 +424,7 @@
                     }
                 }).addTo(mymap);
                 sidebar.close();
+                
             }
 
 
@@ -597,7 +599,7 @@
                     filter: function (feature, layer) {
 
                         return (feature.properties.operador == "BAIXBUS");
-
+                        
                     }
 
                 }).addTo(mymap);
