@@ -1,0 +1,304 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Validacions T-Mobilitat</title>
+    <style>
+       
+a{
+    text-decoration:none;
+}
+
+        .dropbtn {
+
+            display: block;
+            color: white;
+            padding: 20px;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 12px;
+            font-weight: bold;
+            height: 100px;
+            width: 150px;
+            margin: 40px;
+            text-align: center;
+            padding: 18px;
+            margin-left: 80px;
+            margin-right: 80px;
+
+        }
+
+        .dropbtn2 {
+
+display: block;
+color: white;
+padding: 20px;
+font-size: 14px;
+border: 1px solid black;
+border-radius: 12px;
+font-weight: bold;
+height: 100px;
+width: 180px;
+margin: 40px;
+text-align: center;
+padding: 18px;
+margin-left: 80px;
+margin-right: 80px;
+
+}
+    .container{
+        padding-top: 10em;
+    }
+
+        button {
+            vertical-align: top;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+           
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 80px;
+            top: 120px;
+            background-color: black;
+            min-width: 270px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            
+        }
+
+        .dropdown-content a {
+            color:white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            
+        }
+
+        .dropdown-content a:hover {
+            background-color: #789758;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            color: #f1f1f1;
+            ;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            opacity: 0.7;
+            cursor: pointer;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+            
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: 0px;
+            margin-left: 0px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px;
+            border-radius: 0 6px 6px 6px;
+            background-color: #f1f1f1;
+            width: 300px;
+
+        }
+
+        .dropdown-submenu:hover>.dropdown-menu {
+            display: block;
+           
+        }
+
+        .dropdown-submenu>a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #ccc;
+            margin-top: 5px;
+            margin-right: -10px;
+            
+        }
+
+        .dropdown-submenu:hover>a:after {
+            border-left-color: #ffffff;
+        }
+
+        .dropdown-submenu.pull-left {
+            float: none;
+        }
+
+        .dropdown-submenu.pull-left>.dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+        
+
+        button {
+            width: auto;
+            /* ie */
+            overflow: visible;
+            /* ie */
+            padding: 4px 8px 2px 6px;
+            /* ie */
+        }
+
+        button[type] {
+            padding: 4px 8px 4px 6px;
+            /* firefox */
+        }
+
+        .logo{
+            text-align:center;
+        }
+
+        .container{
+            margin: 15px;
+            
+            
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Verdana, sans-serif;
+            background-color: black;
+            overflow:auto;
+        }
+
+        label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+.titol{
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body style="font-family: Verdana, sans-serif;">
+
+
+   
+
+    <div class=container style="text-align: center;">
+        <p class="titol">Visor de validacions de la T-Mobilitat</p>
+        <div class="dropdown" style="text-align: left;">
+            <a href= "./mapes/17112021Dark.html" target="_blank">
+            <button class="dropbtn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" style="background-color: #a3c83d; padding: 16px;">Validacions totals</button>
+            </a>
+        </div>
+
+        <div class="dropdown" style="text-align: left;">
+            <button class="dropbtn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"
+                style="background-color: #48ae68; padding: 16px;">Validacions mensuals</button>
+            <div class="dropdown-content">
+              
+
+                    <a href="17112021.html" target="_blank" data-interception="off">Acumulat Desembre</a>
+                    <a href="17112021.html" target="_blank"><b>Novembre</b></a>
+                    <a href="17112021.html" target="_blank"><b>Octubre</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setembre</b></a>
+                    <a href="17112021.html" target="_blank"><b>Agost (a partir del dia 11)</b></a>
+                    
+
+                
+            </div>
+        </div>
+
+     
+        <div class="dropdown" style="text-align: left;">
+            <button class="dropbtn" style="background-color: #009989; padding: 16px;">Validacions setmanals</button>
+            <div class="dropdown-content">
+                <a href="17112021.html" target="_blank" data-interception="off">Acumulat setmana actual</a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 49</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 48</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 47</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 46</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 45</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 44</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 43</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 42</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 41</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 40</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 39</b></a>
+                    <a href="17112021.html" target="_blank"><b>Setmana 38</b></a>
+               
+            </div>
+        </div>
+
+        <div class="dropdown" style="text-align: left;">
+            <button class="dropbtn2" style="background-color: #45990d; padding: 16px;"><label for="start">Validacions diàries:</label>
+
+                <input type="date" id="start" placeholder="yyyy-mm-dd" name="trip-start"
+                       value="2021-12-13"
+                       min="2021-08-01" max="2021-12-31"></button>
+            
+                
+        </div>
+
+      
+
+
+
+    </div>
+   <script>
+       var data
+       document.getElementById('start').addEventListener("change", function(){
+           data=this.value;
+           
+           if(data=='2021-11-17'){
+              window.open("./mapes/17112021.html");
+           }
+           else if(data=='2021-11-16'){
+            window.open("./mapes/16112021.html");
+           }
+           else{
+               alert('No hi ha dades per la data seleccionada');
+           }
+       })
+      
+
+   </script> 
+</body>
+
+</html>
+
+
+ 
+
+ 
