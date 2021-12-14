@@ -310,7 +310,7 @@
     <script>
         var mymap;
         var validacions = $.ajax({
-            url: "https://raw.githubusercontent.com/Marcrb3/val/main/val_FER.geojson",
+            url: "https://raw.githubusercontent.com/Marcrb3/val/main/dades/val_FER.geojson",
             dataType: "json",
             success: console.log("Capa geojson carregada correctament."),
             error: function (xhr) {
@@ -318,7 +318,7 @@
             }
         })
         var linies = $.ajax({
-            url: "https://raw.githubusercontent.com/Marcrb3/val/main/ferroviari.geojson",
+            url: "https://raw.githubusercontent.com/Marcrb3/val/main/dades/ferroviari.geojson",
             dataType: "json",
             success: console.log("Capa geojson 2 carregada correctament."),
             error: function (xhr) {
@@ -326,7 +326,7 @@
             }
         })
         var val_bus = $.ajax({
-            url: "https://raw.githubusercontent.com/Marcrb3/val/main/val_bus.geojson",
+            url: "https://raw.githubusercontent.com/Marcrb3/val/main/dades/val_bus.geojson",
             dataType: "json",
             success: console.log("Capa geojson 3 carregada correctament."),
             error: function (xhr) {
