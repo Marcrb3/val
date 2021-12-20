@@ -200,6 +200,51 @@
         ::-webkit-scrollbar-thumb:hover {
             background: rgb(4, 143, 108);
         }
+
+        /*Slider*/
+        .slidecontainer {
+            width: 20em;
+            position: absolute;
+            width: 25%;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            z-index: 100000;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #818181;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
     </style>
 
 
@@ -207,7 +252,11 @@
 
 <body>
 
-
+    <!--Slider-->
+    <div class="slidecontainer">
+        <input type="range" min="0" max="6" value="0" step='1' class="slider" id="myRange"><br>
+        <p style="color:white">Dia de la setmana: <span id="demo" style="color:white"></span></p>
+    </div>
 
     <div id="sidebar" class="sidebar collapsed">
         <!-- Categories -->
@@ -390,6 +439,12 @@
                 control.onAdd(mymap)
             );
 
+            //slider
+            var selectedDia;
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = 'Dilluns';
+
 
             L.Map.include({
                 'clearLayers': function () {
@@ -442,10 +497,21 @@
 
                 mymap.setView([41.385243705090105, 2.1402139383833516], 11.5);
 
+                kyAMB = L.geoJSON(linies.responseJSON, {
+                    style: style_line_FMB,
+                    onEachFeature: onEachFeature2,
+                    filter: function (feature, layer) {
+
+                        return (feature.properties.operador == "FMB");
+
+                    }
+                }).addTo(mymap);
+
                 kyIncidents = L.geoJSON(validacions.responseJSON, {
                     onEachFeature: onEachFeature,
                     style: style,
                     pointToLayer: function (feature, latlng) {
+
                         return L.circleMarker(latlng, {
                             radius: getRadiusFMB(feature.properties.val),
                             fillColor: "white",
@@ -456,6 +522,7 @@
 
                         });
 
+
                     },
                     filter: function (feature, layer) {
 
@@ -463,16 +530,6 @@
 
                     }
 
-                }).addTo(mymap);
-
-                kyAMB = L.geoJSON(linies.responseJSON, {
-                    style: style_line_FMB,
-                    onEachFeature: onEachFeature2,
-                    filter: function (feature, layer) {
-
-                        return (feature.properties.operador == "FMB");
-
-                    }
                 }).addTo(mymap);
                 sidebar.close();
 
@@ -482,6 +539,18 @@
             drawFGC = function () {
                 neteja();
                 mymap.setView([41.385243705090105, 2.1402139383833516], 10.5);
+
+
+                kyAMB = L.geoJSON(linies.responseJSON, {
+                    style: style_line_FGC,
+                    onEachFeature: onEachFeature2,
+                    filter: function (feature, layer) {
+
+                        return (feature.properties.operador == "FGC");
+
+                    }
+                }).addTo(mymap);
+
                 kyIncidents = L.geoJSON(validacions.responseJSON, {
                     onEachFeature: onEachFeature,
                     style: style,
@@ -505,21 +574,24 @@
 
                 }).addTo(mymap);
 
-                kyAMB = L.geoJSON(linies.responseJSON, {
-                    style: style_line_FGC,
-                    onEachFeature: onEachFeature2,
-                    filter: function (feature, layer) {
-
-                        return (feature.properties.operador == "FGC");
-
-                    }
-                }).addTo(mymap);
                 sidebar.close();
             }
 
             drawROD = function () {
                 neteja();
                 mymap.setView([41.385243705090105, 2.1402139383833516], 10);
+
+
+                kyAMB = L.geoJSON(linies.responseJSON, {
+                    style: style_line_ROD,
+                    onEachFeature: onEachFeature2,
+                    filter: function (feature, layer) {
+
+                        return (feature.properties.operador == "ROD");
+
+                    }
+                }).addTo(mymap);
+
                 kyIncidents = L.geoJSON(validacions.responseJSON, {
                     onEachFeature: onEachFeature,
                     style: style,
@@ -543,15 +615,6 @@
 
                 }).addTo(mymap);
 
-                kyAMB = L.geoJSON(linies.responseJSON, {
-                    style: style_line_ROD,
-                    onEachFeature: onEachFeature2,
-                    filter: function (feature, layer) {
-
-                        return (feature.properties.operador == "ROD");
-
-                    }
-                }).addTo(mymap);
                 sidebar.close();
             }
 
@@ -656,6 +719,44 @@
                 }).addTo(mymap);
                 sidebar.close();
             }
+
+            //Filtrem els dies de la setmana a l'slider
+
+            slider.addEventListener("change", function () {
+                selectedDia = this.value;
+                console.log(selectedDia);
+
+                if (selectedDia == 0) {
+                    output.innerHTML = 'Dilluns';
+
+                }
+                else if (selectedDia == 1) {
+                    output.innerHTML = 'Dimarts';
+
+                }
+                else if (selectedDia == 2) {
+                    output.innerHTML = 'Dimecres';
+
+                }
+                else if (selectedDia == 3) {
+                    output.innerHTML = 'Dijous';
+
+                }
+                else if (selectedDia == 4) {
+                    output.innerHTML = 'Divendres';
+
+                }
+                else if (selectedDia == 5) {
+                    output.innerHTML = 'Dissabte';
+
+                }
+                else if (selectedDia == 6) {
+                    output.innerHTML = 'Diumenge';
+
+                }
+
+
+            })
 
 
 
@@ -874,9 +975,9 @@
             function style(feature) {
                 return {
                     weight: 1,
-                    color: 'black',
+                    color: 'white',
                     dashArray: '',
-                    fillOpacity: 0.55
+                    fillOpacity: 0
 
 
                 };
@@ -971,9 +1072,9 @@
 
                 layer.setStyle({
                     weight: 3,
-                    color: 'black',
+                    color: 'white',
                     dashArray: '',
-                    fillOpacity: 0.55
+                    fillOpacity: 0
                 });
 
                 if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -1002,9 +1103,9 @@
 
                 layer.setStyle({
                     weight: 1,
-                    color: 'black',
+                    color: 'white',
                     dashArray: '',
-                    fillOpacity: 0.55
+                    fillOpacity: 0
                 });
             }
 
@@ -1015,7 +1116,7 @@
                     weight: 2.5,
 
                 });
-
+                layer.bringToBack();
             }
 
             function zoomToFeature(e) {
